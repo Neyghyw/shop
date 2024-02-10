@@ -10,23 +10,23 @@
     <title>@yield('Title')</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <header>
-        @section('Header')
-            {{-- Block Header --}}
-        @endsection
-    </header>
+<header>
+    @section('Header')
+        {{-- Block Header --}}
+    @endsection
+</header>
 
-    <main class="flex-shrink-0">
-        @section('Main')
-            {{-- Block Main --}}
-        @endsection
-    </main>
+<main class="flex-shrink-0">
+    @section('Main')
+        {{-- Block Main --}}
+    @endsection
+</main>
 
-    <footer>
-        @section('Footer')
-            {{-- Block Footer --}}
-        @endsection
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<footer>
+    @section('Footer')
+        {{-- Block Footer --}}
+    @endsection
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

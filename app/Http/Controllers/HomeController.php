@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MainPageController extends Controller
+class HomeController extends Controller
 {
     /** Show index page. */
     public function index()
@@ -12,4 +12,3 @@ class MainPageController extends Controller
        return view('index');
     }
 }
-//return view('greeting', ['name' => 'James']);
