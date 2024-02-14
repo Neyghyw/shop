@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->bigInteger('_lft');
-            $table->bigInteger('_rft');
+            $table->string('name');
+            $table->unsignedBigInteger('_lft');
+            $table->unsignedBigInteger('_rft');
             $table->bigInteger('depth');
         });
     }
