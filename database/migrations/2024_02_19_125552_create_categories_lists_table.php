@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('categories_lists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('_lft');
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('categories_lists');
     }
 };

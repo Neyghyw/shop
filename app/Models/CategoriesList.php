@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PurchaseHistory extends Model
+class CategoriesList extends Model
 {
     use HasFactory;
-    protected $table = 'purchase_history';
+
+    protected $fillable = [];
 }
