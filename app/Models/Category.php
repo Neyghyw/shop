@@ -5,8 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HistoryOfPurchase extends Model
+class Category extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+
+    protected $fillable = [
+        'name',
+        '_lft',
+        '_rft',
+        'depth'
+    ];
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_purchases', function (Blueprint $table) {
             $table->foreignId('product_id')->constrained('products');
-            $table->foreignId('purchase_id')->constrained('purchase_history');
+            $table->foreignId('purchase_id')->constrained('history_purchases');
         });
     }
 

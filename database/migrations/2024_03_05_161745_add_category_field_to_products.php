@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories_lists', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('_lft');
-            $table->unsignedBigInteger('_rft');
-            $table->bigInteger('depth');
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('categories');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories_lists');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn("category_id");
+        });
     }
 };
