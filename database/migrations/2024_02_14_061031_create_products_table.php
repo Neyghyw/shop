@@ -17,7 +17,6 @@ return new class extends Migration
             $table->longText('description');
             $table->integer('price');
             $table->integer('stock');
-            $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('brand_id')->constrained('brands');
         });
     }

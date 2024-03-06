@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_purchases', function (Blueprint $table) {
+        Schema::create('history_purchases', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('product_id')->constrained('products');
-            $table->foreignId('purchase_id')->constrained('history_purchases');
+            $table->foreignId('user_id')->constrained('users');
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_purchases');
+        Schema::dropIfExists('history_of_purchases');
     }
 };
