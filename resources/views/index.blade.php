@@ -1,6 +1,6 @@
 @extends('layouts.default_layout')
 
-@section('Title', 'Welcome to BLOG!')
+@section('Title', 'DLS-shop')
 
 @section('Header')
     @include('layouts.components.header')

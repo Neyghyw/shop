@@ -1,13 +1,10 @@
-<footer class="footer mt-auto py-3 bg-body-tertiary">
-    <div class="container">
-        <span class="text-body-secondary">Время по Гринвичу:
-            @php
-                use Carbon\Carbon;
-                print(Carbon::now()->format('H:i'));
-            @endphp
-        </span>
-    </div>
-    <div class="container">
-        <span class="text-body-secondary">Powered by Колясик & Dimas</span>
+<footer class="sticky top-[100vh] bg-white rounded-lg shadow dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">DLS™</a>. Powered by Dimasik and Kolyasik.
+        @php
+            use Carbon\Carbon;
+            print(Carbon::now()->format('H:i'))
+        @endphp
+      </span>
     </div>
 </footer>
