@@ -19,10 +19,11 @@ class ProductFactory extends Factory
     {
         $category = Category::all()->random();
         $brand = Brand::all()->random();
+        $name = ucfirst(fake() -> word());
 
         return [
-            'name' => fake()->word(),
-            'description' => fake()->text(),
+            'name' => $name,
+            'description' => fake() -> text(),
             'price' => fake()->numberBetween(0, 1000),
             'stock' => 0,
             'category_id' => $category,
