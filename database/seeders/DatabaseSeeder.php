@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use \App\Models\Category;
+use \App\Models\Brand;
+use \App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        define('BRANDS_COUNT', 20);
+        define('CATEGORIES_COUNT', 75);
+        define('PRODUCTS_COUNT', 150);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Brand::factory(BRANDS_COUNT) -> create();
+
+        for ($i = 1; $i <= CATEGORIES_COUNT; $i++) {
+            Category::factory() -> create();
+        }
+
+        Product::factory(PRODUCTS_COUNT) -> create();
     }
 }
