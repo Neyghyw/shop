@@ -16,7 +16,7 @@
                 @endempty
                 @isset($products)
                     @foreach ($products as $product)
-                        <a href="{{ route('product_card', $product -> id) }}" class="group">
+                        <a href="{{ route('product_card', $product) }}" class="group">
                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                 <img src="https://kvadroshow.com/sites/default/files/news/pnevmokostyum_dns.jpg" class="h-full w-full object-cover object-center group-hover:opacity-75">
                             </div>

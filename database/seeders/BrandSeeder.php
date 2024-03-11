@@ -10,8 +10,9 @@ class BrandSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    private const BRANDS_COUNT = 20;
     public function run(): void
     {
-        Brand::factory()->count(20)->create();
+        Brand::factory( self::BRANDS_COUNT) -> create();
     }
 }

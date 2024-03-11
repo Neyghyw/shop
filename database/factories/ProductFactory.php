@@ -5,6 +5,8 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Category;
 use App\Models\Brand;
+use Illuminate\Support\Facades\DB;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
  */
@@ -17,17 +19,23 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $category = Category::all()->random();
-        $brand = Brand::all()->random();
+        $category = DB::table('categories')
+                    -> inRandomOrder()
+                    -> first();
+
+        $brand = DB::table('brands')
+                -> inRandomOrder()
+                -> first();
+
         $name = ucfirst(fake() -> word());
 
         return [
             'name' => $name,
             'description' => fake() -> text(),
-            'price' => fake()->numberBetween(0, 1000),
+            'price' => fake() -> numberBetween(0, 1000),
             'stock' => 0,
-            'category_id' => $category,
-            'brand_id' => $brand,
+            'category_id' => $category -> id,
+            'brand_id' => $brand -> id,
         ];
     }
 }

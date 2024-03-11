@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductsListController;
-use App\Http\Controllers\ProductCardController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +16,9 @@ use App\Http\Controllers\ProductCardController;
 */
 
 Route::get('/', [HomeController::class, 'index']) -> name('main_page');
-Route::get('/products', [ProductsListController::class, 'products_list']) -> name('products_list');
-Route::get('/product_card/{id}', [ProductCardController::class, 'show_product_card']) -> name('product_card');
+
+
+Route::prefix('products') -> group(function () {
+    Route::get('/', [ProductController::class, 'productsList']) -> name('products_list');
+    Route::get('/{product}/detail', [ProductController::class, 'showProductCard']) -> name('product_card');
+});

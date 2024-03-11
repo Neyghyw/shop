@@ -9,11 +9,10 @@ use Kalnoy\Nestedset\NodeTrait;
 class Category extends Model
 {
     use HasFactory, NodeTrait;
-    public $timestamps = false;
     protected $fillable = [
         'name',
         '_lft',
         '_rgt',
-        'depth'
+        'depth',
     ];
 }

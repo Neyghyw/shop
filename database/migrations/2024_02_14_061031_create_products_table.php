@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('stock');
             $table->foreignId('brand_id')->constrained('brands');
+            $table->timestamps();
         });
     }
 
