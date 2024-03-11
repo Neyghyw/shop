@@ -7,14 +7,14 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    function showProductCard(Product $product): View
+    function detail(Product $product): View
     {
-        return view('product_card', ['product' => $product]);
+        return view('products.detail', ['product' => $product]);
     }
 
-    public function productsList(): View
+    public function index(): View
     {
         $products = Product::paginate(15);
-        return view('products_list', ['products' => $products]);
+        return view('products.index', ['products' => $products]);
     }
 }

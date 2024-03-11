@@ -19,13 +19,8 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $category = DB::table('categories')
-                    -> inRandomOrder()
-                    -> first();
-
-        $brand = DB::table('brands')
-                -> inRandomOrder()
-                -> first();
+        $category = Category::query() -> inRandomOrder() -> first();
+        $brand = Brand::query() -> inRandomOrder() -> first();
 
         $name = ucfirst(fake() -> word());
 

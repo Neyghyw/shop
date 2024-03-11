@@ -7,10 +7,10 @@ use Illuminate\Database\Seeder;
 use App\Models\Brand;
 class BrandSeeder extends Seeder
 {
+    private const BRANDS_COUNT = 20;
     /**
      * Run the database seeds.
      */
-    private const BRANDS_COUNT = 20;
     public function run(): void
     {
         Brand::factory( self::BRANDS_COUNT) -> create();

@@ -19,6 +19,6 @@ Route::get('/', [HomeController::class, 'index']) -> name('main_page');
 
 
 Route::prefix('products') -> group(function () {
-    Route::get('/', [ProductController::class, 'productsList']) -> name('products_list');
-    Route::get('/{product}/detail', [ProductController::class, 'showProductCard']) -> name('product_card');
+    Route::get('/', [ProductController::class, 'index']) -> name('products_list');
+    Route::get('/{product}/detail', [ProductController::class, 'detail']) -> name('product_card');
 });

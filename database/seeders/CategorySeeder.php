@@ -8,10 +8,10 @@ use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
+    private const CATEGORIES_COUNT = 75;
     /**
      * Run the database seeds.
      */
-    private const CATEGORIES_COUNT = 75;
     public function run(): void
     {
         for ($i = 1; $i <= self::CATEGORIES_COUNT; $i++) {
