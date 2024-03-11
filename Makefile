@@ -19,3 +19,6 @@ cache:
 	php artisan view:cache
 	php artisan config:cache
 	php artisan event:cache
+
+lint:
+	./vendor/bin/phpcs
