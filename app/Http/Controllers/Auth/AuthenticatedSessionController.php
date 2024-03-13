@@ -33,6 +33,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->flash('flash_message', [
             'text' => 'You log in system. Welcome to DLS.',
         ]);
+
+
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
