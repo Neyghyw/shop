@@ -22,15 +22,19 @@
                 </button>
 
                 <!-- Profile dropdown -->
-                <div class="relative ml-3">
+                <form class="relative ml-3 my-3" action="{{ route('profile.edit') }}">
                     <div>
-                        <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <button type="submit" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">Open user menu</span>
                             <img class="h-8 w-8 rounded-full" src="https://icdn.lenta.ru/images/2023/08/09/11/20230809115112472/square_320_0a647273ff4a023b94cea4d96c0951a5.jpg" alt="">
                         </button>
                     </div>
-                </div>
+                </form>
+                <form method="POST" action="{{ route('logout') }}" class="mx-3 my-3 text-white">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
             </div>
         </div>
     </div>

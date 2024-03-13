@@ -1,3 +1,4 @@
+@include('components.flash_message')
 <div class="container rounded-md border-solid border-8 border-pink-400 mx-auto bg-gray-300 w-3/6 h-3/6 mt-32">
     <h1 class="text-3xl font-bold text-center mt-7">Welcome to DLS-shop!</h1>
     <div class="relative size-11/12">
