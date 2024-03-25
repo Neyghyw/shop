@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -15,12 +16,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/', [HomeController::class, 'index']);
 
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('products_list');
     Route::get('/{product}/detail', [ProductController::class, 'detail'])->name('product_card');
-})->middleware('auth');
+});
+
+Route::prefix('cart')->group(function () {
+    Route::post('/add/{product}', [CartController::class, 'add'])->name('add_to_cart')->middleware('auth');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,4 +41,4 @@ require __DIR__ . '/auth.php';
 
 Route::fallback(function () {
     return view('errors.404');
-})->middleware('auth');
+});
