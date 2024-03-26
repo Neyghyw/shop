@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $request->session()->flash('flash_message', [
-            'text' => 'You log in system. Welcome to DLS.',
+            'text' => __('messages.login_success_info'),
         ]);
 
 
@@ -51,7 +51,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         $request->session()->flash('flash_message', [
-            'text' => 'You logout from system. See you soon.',
+            'text' => __('messages.logout_success_info'),
         ]);
         return redirect(route('login'));
     }

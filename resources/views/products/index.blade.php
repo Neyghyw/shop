@@ -8,11 +8,11 @@
 
 @section('Main')
     <div class="bg-white">
-        <h1 class="text-center pt-12 text-4xl">{{ __("Products") }}</h1>
+        <h1 class="text-center pt-12 text-4xl">{{ __("messages.products") }}</h1>
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 @empty($products)
-                    {{ __("Products doesn't added") }}.
+                    {{ __("messages.no_products") }}.
                 @endempty
                 @isset($products)
                     @foreach ($products as $product)
@@ -21,8 +21,8 @@
                                 <img src="https://kvadroshow.com/sites/default/files/news/pnevmokostyum_dns.jpg" class="h-full w-full object-cover object-center group-hover:opacity-75">
                             </div>
                             <h3 class="mt-4 text-lg text-gray-700"> {{ $product -> name }} </h3>
-                            <p><strong>{{ __("Price") }}:</strong> {{ $product -> price }} ₽ <strong> | {{ __("Category") }}:</strong> {{ $product -> category -> name }}</p>
-                            <p><strong>{{ __("Brand") }}:</strong> {{ $product -> brand -> name }}</p>
+                            <p><strong>{{ __("messages.price") }}:</strong> {{ $product -> price }} ₽ <strong> | {{ __("messages.category") }}:</strong> {{ $product -> category -> name }}</p>
+                            <p><strong>{{ __("messages.brand") }}:</strong> {{ $product -> brand -> name }}</p>
                             <p></p>
                         </a>
                     @endforeach

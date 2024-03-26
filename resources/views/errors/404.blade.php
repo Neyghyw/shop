@@ -1,6 +1,6 @@
 @extends('layouts.default_layout')
 
-@section('Title', __('404 not found'))
+@section('Title', '404')
 
 @section('Header')
     @include('layouts.components.header')

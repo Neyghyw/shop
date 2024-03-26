@@ -4,10 +4,7 @@
         {{\Carbon\Carbon::now()->format('H:i')}}
       </span>
       <div class="text-sm text-gray-500 sm:text-center">
-          {{ __('Welcome to DLS') }}
-          @isset($name)
-              , {{ \Illuminate\Support\Facades\Request::user() -> name }}
-          @endisset
+          {{ __('messages.welcome') }}
       </div>
     </div>
 </footer>
