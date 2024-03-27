@@ -7,7 +7,7 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    function detail(Product $product): View
+    public function detail(Product $product): View
     {
         return view('products.detail', ['product' => $product]);
     }

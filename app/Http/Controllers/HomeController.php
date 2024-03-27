@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /** Show index page. */
-    public function index()
+    // Show index page.
+    public function index(Request $request)
     {
-       return view('index');
+        $flash_message = $request->session()->get('flash_message');
+        return view('index', ['flash_message' => $flash_message]);
     }
 }
